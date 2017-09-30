@@ -6,3 +6,5 @@
 	 * See https://github.com/gsu-web-programming-class/wheel-of-fortune/issues/4
 	 * See https://github.com/gsu-web-programming-class/wheel-of-fortune/issues/5
 	 */
+
+	include 'php_utils.php';
