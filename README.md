@@ -1,4 +1,4 @@
-#Wheel of Fortune
+# Wheel of Fortune
 >A Project for GSU Web Programming Class • CSC 4370 • Fall 2017
 ### Technologies Used:
 - Php with PhpStorm
@@ -13,4 +13,4 @@ Joshua King|[joshuamking](https://github.com/joshuamking "Github: Joshua King")|
  
 ___
 ___
-####[Releases](https://github.com/gsu-web-programming-class/wheel-of-fortune/releases)
+#### [Releases](https://github.com/gsu-web-programming-class/wheel-of-fortune/releases)
