@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <title>Wheel of Fortune</title>
         <link rel="stylesheet" href="main.css">
+
+	    <?php include 'php/php_utils.php'; ?>
+
     </head>
     <body>
         <h1>Hello World</h1>
