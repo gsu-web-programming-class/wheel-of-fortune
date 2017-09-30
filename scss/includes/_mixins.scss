@@ -1,0 +1,35 @@
+@import "variables";
+
+@mixin at-least($device-width) {
+    @media screen and (min-width : $device-width) {
+        @content
+    }
+}
+
+@mixin less-than($device-width) {
+    @media screen and (max-width : $device-width - 1) {
+        @content
+    }
+}
+
+@mixin center {
+    text-align : center;
+    margin     : auto;
+    position   : relative;
+}
+
+@mixin round($radius: 100%) {
+    border-radius : $radius;
+}
+
+@mixin box-shadow($x: 4px, $y: $x, $blur: 3px, $color: rgba(0, 0, 0, .75), $size: 0) {
+    box-shadow : $x $y $blur $size $color;
+}
+
+@mixin drop-shadow($x: 4px, $y: $x, $blur: 3px, $color: rgba(0, 0, 0, .75)) {
+    filter : drop-shadow($x $y $blur $color)
+}
+
+@mixin blur($radius: 10px) {
+    filter : blur($radius);
+}
