@@ -6,6 +6,7 @@
 <!--    <link rel="stylesheet" type="text/css" href="board.css"/>-->
 </head>
 <body>
+<div>
 <?php
 $phrase1='A DIME A DOZEN';
 $phrase2='BAG OF TRICKS';
@@ -45,7 +46,7 @@ $W=0;
 $X=0;
 $Y=0;
 $Z=0;
-function letter_count($phrase){
+function letter_count($phrase,$A,$B,$C,$D,$E,$F,$G,$H,$I,$J,$K,$L,$M,$N,$O,$P,$Q,$R,$S,$T,$U,$V,$W,$X,$Y,$Z){
     $phrase_length=strlen($phrase);
     for ($a=0; $a<$phrase_length; $a++){
         if($phrase[$a]=='A'){
@@ -129,24 +130,26 @@ function letter_count($phrase){
     }
 }
 $words=0;
-function phrase_words($phrases){
+function phrase_words($words,$phrases){
     $phrasewords = explode(" ",$phrases);
-    foreach($tags as $i =>$key) {
-        $i >0;
+    foreach($phrasewords as $i =>$key) {
         $words++;
     }
 }
-function split_if_need($words,$phrases){
-    if($words >= 2){
-
+$twoline=0;
+function split_if_need($words,$phrases,$twoline){
+    if ($words >= 2) {
+        preg_match('/^([^ ]+ +[^ ]+) +(.*)$/', $phrases, $matches);
+        $twoline++;
+        return $matches;
     }
-    else {
+}
+function to_binary(){
 
-    }
 }
 
 ?>
-
+</div>
 </body>
 </html>
 
