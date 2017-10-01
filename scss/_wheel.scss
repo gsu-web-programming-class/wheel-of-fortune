@@ -1,0 +1,28 @@
+#wheel {
+    display         : flex;
+    height          : 100vh;
+    justify-content : center;
+    align-items     : center;
+
+    > ul {
+        > li {
+            display          : inline;
+            width            : 10px;
+            text-align       : center;
+            word-wrap        : break-word;
+            transform-origin : top center;
+            padding-top      : 150px;
+            position         : absolute;
+
+            > p {
+                transform : rotate(180deg);
+            }
+
+            @for $i from 1 through 24 {
+                &:nth-of-type(#{$i}) {
+                    transform : rotate(#{$i*(360/24)}deg);
+                }
+            }
+        }
+    }
+}
