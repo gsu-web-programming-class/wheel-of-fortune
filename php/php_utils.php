@@ -21,7 +21,7 @@
 	 * @return string "the html to be inserted to the document. This will automatically play"
 	 */
 	function play_sound( $sound, $loop = false, $path_to_audio_dir = "media/audio" ) {
-		return "<audio " . $loop ? "loop" : "" . " autoplay src=\"$path_to_audio_dir/<?php echo $sound ?>\"></audio>";
+		return "<audio " . ( $loop ? "loop" : "" ) . " autoplay src=\"$path_to_audio_dir/$sound\"></audio>";
 	}
 
 	function char_after_first_occurrence( $str, $searchStr ) {
