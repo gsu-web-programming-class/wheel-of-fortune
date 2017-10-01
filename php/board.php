@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+    <title>UI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!--    <link rel="stylesheet" type="text/css" href="board.css"/>-->
+</head>
+<body>
+<?php
+$phrase1='A DIME A DOZEN';
+$phrase2='BAG OF TRICKS';
+$phrase3='CASH COW';
+$phrase4='CHAIN OF EVENTS';
+$phrase5='DIVIDE AND CONQUER';
+$phrase6='EXACT CHANGE';
+$phrase7='FAME AND FORTUNE';
+$phrase8='GOING GREEN';
+$phrase9='IF THE SHOE FITS';
+$phrase10='JUST ADD WATER';
+$phrase11='MY CUP OF TEA';
+$phrase12='NOBODY IS PERFECT';
+$A=0;
+$B=0;
+$C=0;
+$D=0;
+$E=0;
+$F=0;
+$G=0;
+$H=0;
+$I=0;
+$J=0;
+$K=0;
+$L=0;
+$M=0;
+$N=0;
+$O=0;
+$P=0;
+$Q=0;
+$R=0;
+$S=0;
+$T=0;
+$U=0;
+$V=0;
+$W=0;
+$X=0;
+$Y=0;
+$Z=0;
+function letter_count($phrase){
+    $phrase_length=strlen($phrase);
+    for ($a=0; $a<$phrase_length; $a++){
+        if($phrase[$a]=='A'){
+            $A++;
+        }
+        else if($phrase[$a]=='B'){
+            $B++;
+        }
+        else if($phrase[$a]=='C'){
+            $C++;
+        }
+        else if($phrase[$a]=='D'){
+            $D++;
+        }
+        else if($phrase[$a]=='E'){
+            $E++;
+        }
+        else if($phrase[$a]=='F'){
+            $F++;
+        }
+        else if($phrase[$a]=='G'){
+            $G++;
+        }
+        else if($phrase[$a]=='H'){
+            $H++;
+        }
+        else if($phrase[$a]=='I'){
+            $I++;
+        }
+        else if($phrase[$a]=='J'){
+            $J++;
+        }
+        else if($phrase[$a]=='K'){
+            $K++;
+        }
+        else if($phrase[$a]=='L'){
+            $L++;
+        }
+        else if($phrase[$a]=='M'){
+            $M++;
+        }
+        else if($phrase[$a]=='N'){
+            $N++;
+        }
+        else if($phrase[$a]=='O'){
+            $O++;
+        }
+        else if($phrase[$a]=='P'){
+            $P++;
+        }
+        else if($phrase[$a]=='Q'){
+            $Q++;
+        }
+        else if($phrase[$a]=='R'){
+            $R++;
+        }
+        else if($phrase[$a]=='S'){
+            $S++;
+        }
+        else if($phrase[$a]=='T'){
+            $T++;
+        }
+        else if($phrase[$a]=='U'){
+            $U++;
+        }
+        else if($phrase[$a]=='V'){
+            $V++;
+        }
+        else if($phrase[$a]=='W'){
+            $W++;
+        }
+        else if($phrase[$a]=='X'){
+            $X++;
+        }
+        else if($phrase[$a]=='Y'){
+            $Y++;
+        }
+        else if($phrase[$a]=='Z'){
+            $Z++;
+        }
+    }
+}
+$words=0;
+function phrase_words($phrases){
+    $phrasewords = explode(" ",$phrases);
+    foreach($tags as $i =>$key) {
+        $i >0;
+        $words++;
+    }
+}
+function split_if_need($words,$phrases){
+    if($words >= 2){
+
+    }
+    else {
+
+    }
+}
+
+?>
+
+</body>
+</html>
+
+
