@@ -36,7 +36,7 @@
 						21 => [ "value" => 5000, "display" => "$5000" ],
 						22 => [ "value" => 0, "display" => "Bankrupt" ],
 						23 => [ "value" => 0, "display" => "Bankrupt" ],
-					];/**/
+					];
 					shuffle( $money_amounts );
 					for ( $i = 0; $i < 24; $i ++ ) {
 						echo "<li><p>";
