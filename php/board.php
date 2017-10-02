@@ -7,6 +7,12 @@
 </head>
 <body>
 <div>
+
+
+
+
+</div>
+<div>
 <?php
 $phrase1='A DIME A DOZEN';
 $phrase2='BAG OF TRICKS';
@@ -130,20 +136,22 @@ function letter_count($phrase,$A,$B,$C,$D,$E,$F,$G,$H,$I,$J,$K,$L,$M,$N,$O,$P,$Q
     }
 }
 $words=0;
+
 function phrase_words($words,$phrases){
     $phrasewords = explode(" ",$phrases);
     foreach($phrasewords as $i =>$key) {
         $words++;
     }
 }
+
 $twoline=0;
 function split_if_need($words,$phrases,$twoline){
-    if ($words >= 2) {
+    if ($words >= 3) {
         preg_match('/^([^ ]+ +[^ ]+) +(.*)$/', $phrases, $matches);
         $twoline++;
-        return $matches;
     }
 }
+
 function to_binary(){
 
 }
