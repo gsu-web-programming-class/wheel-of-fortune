@@ -4,6 +4,7 @@
 ## Technologies Used:
 - Php with PhpStorm
 - SCSS
+- Compass Sass
 - CSS3
 - Xdebug
 

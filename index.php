@@ -24,23 +24,23 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-	    <?php if ( isset( $sound ) ) {
-		    echo $sound;
-	    } ?>
+        <?php if (isset($sound)) {
+            echo $sound;
+        } ?>
         <h1>Hello World</h1>
         <h2>User Guess: <?php if ( isset( $user_guess ) ) {
-			    echo $user_guess;
-		    } ?></h2>
-	    <?php if ( ! $is_initial_load ) : ?>
+                echo $user_guess;
+            } ?></h2>
+        <?php if (!$is_initial_load) : ?>
             <form action="index.php" method="post">
                 <!-- TODO : Is that the best title? -->
-                <input required pattern="[A-z]+" id="user_guess" type="text" autofocus name="user_guess"
-                       title="Type your guess" autocomplete="off" />
+                <input required pattern="[0-9A-z]+" id="user_guess" type="text" autofocus name="user_guess"
+                       title="Type your guess, then press enter" autocomplete="off" />
             </form>
-	    <?php else: ?>
+        <?php else: ?>
             <form action="index.php" method="get">
                 <input type="submit" value="Start" name="start">
             </form>
-	    <?php endif; ?>
+        <?php endif; ?>
     </body>
 </html>
