@@ -16,3 +16,12 @@ relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
+
+
+require 'fileutils'
+    on_stylesheet_saved do |file|
+        if File.exists?(file)
+        filename = File.basename(file, File.extname(file))
+        File.rename(file, filename + ".pcss")
+    end
+end

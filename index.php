@@ -27,7 +27,6 @@
         <?php if (isset($sound)) {
             echo $sound;
         } ?>
-        <h1>Hello World</h1>
         <h2>User Guess: <?php if ( isset( $user_guess ) ) {
                 echo $user_guess;
             } ?></h2>
