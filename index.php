@@ -32,7 +32,6 @@
             } ?></h2>
         <?php if (!$is_initial_load) : ?>
             <form action="index.php" method="post">
-                <!-- TODO : Is that the best title? -->
                 <input required pattern="[0-9A-z]+" id="user_guess" type="text" autofocus name="user_guess"
                        title="Type your guess, then press enter" autocomplete="off" />
             </form>
