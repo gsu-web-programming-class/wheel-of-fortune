@@ -2,6 +2,6 @@
 /.idea/workspace.xml
 /.idea/dictionaries/
 .idea/vcs.xml
-/main.css.map
+*.map
 /resources.txt
 .sass-cache
