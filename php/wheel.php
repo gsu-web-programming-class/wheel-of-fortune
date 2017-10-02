@@ -9,11 +9,6 @@
     </head>
     <body>
         <?php echo play_sound( WHEEL_SPIN, false, "../media/audio" ); ?>
-        <ul class='pie'>
-            <li class='slice'>
-                <div class='slice-contents'>boo</div>
-            </li>
-        </ul>
         <div id="wheel">
             <ul class='pie'>
                 <?php
@@ -50,7 +45,27 @@
                         echo "</span></div></li>";
                     }
                 ?>
+                <style type="text/css" rel="stylesheet">
+                    #wheel {
+                    <?php
+                        $wheel_index      = rand( 0, count( $money_amounts ) );
+                        $wheel_anim = "wheel-rotation-$wheel_index";
+
+                        $prev_wheel_index = isset($_GET["prev_wheel_index"]) ? $_GET["prev_wheel_index"] : 0;
+
+                        echo "-webkit-animation-name : $wheel_anim;";
+                        echo "-o-animation-name : $wheel_anim;";
+                        echo "animation-name : $wheel_anim;";
+                        echo "transform : rotate(".($prev_wheel_index*(360/24))."deg);";
+                    ?>
+                    }
+                </style>
+                <?php
+                    echo "<h1>$wheel_index</h1>";
+                    echo "<input hidden name=\"prev_wheel_index\" type=\"text\" value=\"$wheel_index\">";
+                ?>
             </ul>
+            <img src="../media/img/wheel_of_fortune_wheel_center.png">
         </div>
     </body>
 </html>

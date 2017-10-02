@@ -11,528 +11,847 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin         : 0;
-  padding        : 0;
-  border         : 0;
-  font           : inherit;
-  font-size      : 100%;
-  vertical-align : baseline;
+    margin         : 0;
+    padding        : 0;
+    border         : 0;
+    font           : inherit;
+    font-size      : 100%;
+    vertical-align : baseline;
 }
 
 html {
-  line-height : 1;
+    line-height : 1;
 }
 
 ol, ul {
-  list-style : none;
+    list-style : none;
 }
 
 table {
-  border-collapse : collapse;
-  border-spacing  : 0;
+    border-collapse : collapse;
+    border-spacing  : 0;
 }
 
 caption, th, td {
-  text-align     : left;
-  font-weight    : normal;
-  vertical-align : middle;
+    text-align     : left;
+    font-weight    : normal;
+    vertical-align : middle;
 }
 
 q, blockquote {
-  quotes : none;
+    quotes : none;
 }
 q:before, q:after, blockquote:before, blockquote:after {
-  content : "";
-  content : none;
+    content : "";
+    content : none;
 }
 
 a img {
-  border : none;
+    border : none;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display : block;
+    display : block;
 }
 
 #wheel {
-  display         : -webkit-box;
-  display         : -ms-flexbox;
-  display         : flex;
-  height          : 100vh;
-  -webkit-box-pack : center;
-      -ms-flex-pack : center;
-          justify-content : center;
-  -webkit-box-align     : center;
-      -ms-flex-align     : center;
-          align-items     : center;
+    display                     : -webkit-box;
+    display                     : -ms-flexbox;
+    display                     : flex;
+    height                      : 100vh;
+    -webkit-box-pack            : center;
+    -ms-flex-pack               : center;
+    justify-content             : center;
+    -webkit-box-align           : center;
+    -ms-flex-align              : center;
+    align-items                 : center;
+    -webkit-user-select         : none;
+    -moz-user-select            : none;
+    -ms-user-select             : none;
+    user-select                 : none;
+    -webkit-animation-duration  : 5s;
+    animation-duration          : 5s;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode         : forwards;
+}
+
+#wheel img {
+    position : absolute;
 }
 #wheel > ul > li {
-  overflow         : hidden;
-  position         : absolute;
-  top              : 0;
-  right            : 0;
-  width            : 50%;
-  height           : 50%;
-  -webkit-transform-origin : 0% 100%;
-          transform-origin : 0% 100%;
+    overflow                 : hidden;
+    position                 : absolute;
+    top                      : 0;
+    right                    : 0;
+    width                    : 50%;
+    height                   : 50%;
+    -webkit-transform-origin : 0 100%;
+    transform-origin         : 0 100%;
 }
-
 #wheel > ul > li .slice-contents {
-  position      : absolute;
-  left          : -100%;
-  width         : 200%;
-  height        : 200%;
-  border-radius : 50%;
-  text-align    : center;
-  -webkit-transition    : background-color .5s;
-  transition    : background-color .5s;
+    position           : absolute;
+    left               : -100%;
+    width              : 200%;
+    height             : 200%;
+    border-radius      : 50%;
+    text-align         : center;
+    -webkit-transition : background-color .5s;
+    transition         : background-color .5s;
 }
-
 #wheel > ul > li .slice-contents > span {
-  color       : black;
-  -webkit-filter      : drop-shadow(1px 1px 1px white);
-          filter      : drop-shadow(1px 1px 1px white);
-  font-weight : bolder;
-  width       : 10px;
-  word-wrap   : break-word;
-  display     : inline-block;
-  padding     : 20px;
-  font-size   : 30px;
+    color          : black;
+    font-weight    : bolder;
+    width          : 10px;
+    word-wrap      : break-word;
+    display        : inline-block;
+    padding        : 20px;
+    font-size      : 25px;
+    -webkit-filter : drop-shadow(1px 1px 1px white);
+    filter         : drop-shadow(1px 1px 1px white);
 }
 #wheel > ul > li:nth-of-type(1) {
-  -webkit-transform : rotate(15.65217deg) skewY(-74.34783deg);
-          transform : rotate(15.65217deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(15.65217deg) skewY(-74.34783deg);
+    transform         : rotate(15.65217deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(1) .slice-contents {
-  background : yellow;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : yellow;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-1 {
+    100% {
+        -webkit-transform : rotate(1830deg);
+        transform         : rotate(1830deg);
+    }
+}
+
+@keyframes wheel-rotation-1 {
+    100% {
+        -webkit-transform : rotate(1830deg);
+        transform         : rotate(1830deg);
+    }
 }
 #wheel > ul > li:nth-of-type(2) {
-  -webkit-transform : rotate(31.30435deg) skewY(-74.34783deg);
-          transform : rotate(31.30435deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(31.30435deg) skewY(-74.34783deg);
+    transform         : rotate(31.30435deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(2) .slice-contents {
-  background : green;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : green;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-2 {
+    100% {
+        -webkit-transform : rotate(1845deg);
+        transform         : rotate(1845deg);
+    }
+}
+
+@keyframes wheel-rotation-2 {
+    100% {
+        -webkit-transform : rotate(1845deg);
+        transform         : rotate(1845deg);
+    }
 }
 #wheel > ul > li:nth-of-type(3) {
-  -webkit-transform : rotate(46.95652deg) skewY(-74.34783deg);
-          transform : rotate(46.95652deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(46.95652deg) skewY(-74.34783deg);
+    transform         : rotate(46.95652deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(3) .slice-contents {
-  background : blue;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : blue;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-3 {
+    100% {
+        -webkit-transform : rotate(1860deg);
+        transform         : rotate(1860deg);
+    }
+}
+
+@keyframes wheel-rotation-3 {
+    100% {
+        -webkit-transform : rotate(1860deg);
+        transform         : rotate(1860deg);
+    }
 }
 #wheel > ul > li:nth-of-type(4) {
-  -webkit-transform : rotate(62.6087deg) skewY(-74.34783deg);
-          transform : rotate(62.6087deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(62.6087deg) skewY(-74.34783deg);
+    transform         : rotate(62.6087deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(4) .slice-contents {
-  background : orange;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : orange;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-4 {
+    100% {
+        -webkit-transform : rotate(1875deg);
+        transform         : rotate(1875deg);
+    }
+}
+
+@keyframes wheel-rotation-4 {
+    100% {
+        -webkit-transform : rotate(1875deg);
+        transform         : rotate(1875deg);
+    }
 }
 #wheel > ul > li:nth-of-type(5) {
-  -webkit-transform : rotate(78.26087deg) skewY(-74.34783deg);
-          transform : rotate(78.26087deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(78.26087deg) skewY(-74.34783deg);
+    transform         : rotate(78.26087deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(5) .slice-contents {
-  background : red;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : pink;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-5 {
+    100% {
+        -webkit-transform : rotate(1890deg);
+        transform         : rotate(1890deg);
+    }
+}
+
+@keyframes wheel-rotation-5 {
+    100% {
+        -webkit-transform : rotate(1890deg);
+        transform         : rotate(1890deg);
+    }
 }
 #wheel > ul > li:nth-of-type(6) {
-  -webkit-transform : rotate(93.91304deg) skewY(-74.34783deg);
-          transform : rotate(93.91304deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(93.91304deg) skewY(-74.34783deg);
+    transform         : rotate(93.91304deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(6) .slice-contents {
-  background : yellow;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : red;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-6 {
+    100% {
+        -webkit-transform : rotate(1905deg);
+        transform         : rotate(1905deg);
+    }
+}
+
+@keyframes wheel-rotation-6 {
+    100% {
+        -webkit-transform : rotate(1905deg);
+        transform         : rotate(1905deg);
+    }
 }
 #wheel > ul > li:nth-of-type(7) {
-  -webkit-transform : rotate(109.56522deg) skewY(-74.34783deg);
-          transform : rotate(109.56522deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(109.56522deg) skewY(-74.34783deg);
+    transform         : rotate(109.56522deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(7) .slice-contents {
-  background : green;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : yellow;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-7 {
+    100% {
+        -webkit-transform : rotate(1920deg);
+        transform         : rotate(1920deg);
+    }
+}
+
+@keyframes wheel-rotation-7 {
+    100% {
+        -webkit-transform : rotate(1920deg);
+        transform         : rotate(1920deg);
+    }
 }
 #wheel > ul > li:nth-of-type(8) {
-  -webkit-transform : rotate(125.21739deg) skewY(-74.34783deg);
-          transform : rotate(125.21739deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(125.21739deg) skewY(-74.34783deg);
+    transform         : rotate(125.21739deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(8) .slice-contents {
-  background : blue;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : green;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-8 {
+    100% {
+        -webkit-transform : rotate(1935deg);
+        transform         : rotate(1935deg);
+    }
+}
+
+@keyframes wheel-rotation-8 {
+    100% {
+        -webkit-transform : rotate(1935deg);
+        transform         : rotate(1935deg);
+    }
 }
 #wheel > ul > li:nth-of-type(9) {
-  -webkit-transform : rotate(140.86957deg) skewY(-74.34783deg);
-          transform : rotate(140.86957deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(140.86957deg) skewY(-74.34783deg);
+    transform         : rotate(140.86957deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(9) .slice-contents {
-  background : orange;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : blue;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-9 {
+    100% {
+        -webkit-transform : rotate(1950deg);
+        transform         : rotate(1950deg);
+    }
+}
+
+@keyframes wheel-rotation-9 {
+    100% {
+        -webkit-transform : rotate(1950deg);
+        transform         : rotate(1950deg);
+    }
 }
 #wheel > ul > li:nth-of-type(10) {
-  -webkit-transform : rotate(156.52174deg) skewY(-74.34783deg);
-          transform : rotate(156.52174deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(156.52174deg) skewY(-74.34783deg);
+    transform         : rotate(156.52174deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(10) .slice-contents {
-  background : red;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : orange;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-10 {
+    100% {
+        -webkit-transform : rotate(1965deg);
+        transform         : rotate(1965deg);
+    }
+}
+
+@keyframes wheel-rotation-10 {
+    100% {
+        -webkit-transform : rotate(1965deg);
+        transform         : rotate(1965deg);
+    }
 }
 #wheel > ul > li:nth-of-type(11) {
-  -webkit-transform : rotate(172.17391deg) skewY(-74.34783deg);
-          transform : rotate(172.17391deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(172.17391deg) skewY(-74.34783deg);
+    transform         : rotate(172.17391deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(11) .slice-contents {
-  background : yellow;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : pink;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-11 {
+    100% {
+        -webkit-transform : rotate(1980deg);
+        transform         : rotate(1980deg);
+    }
+}
+
+@keyframes wheel-rotation-11 {
+    100% {
+        -webkit-transform : rotate(1980deg);
+        transform         : rotate(1980deg);
+    }
 }
 #wheel > ul > li:nth-of-type(12) {
-  -webkit-transform : rotate(187.82609deg) skewY(-74.34783deg);
-          transform : rotate(187.82609deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(187.82609deg) skewY(-74.34783deg);
+    transform         : rotate(187.82609deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(12) .slice-contents {
-  background : green;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : red;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-12 {
+    100% {
+        -webkit-transform : rotate(1995deg);
+        transform         : rotate(1995deg);
+    }
+}
+
+@keyframes wheel-rotation-12 {
+    100% {
+        -webkit-transform : rotate(1995deg);
+        transform         : rotate(1995deg);
+    }
 }
 #wheel > ul > li:nth-of-type(13) {
-  -webkit-transform : rotate(203.47826deg) skewY(-74.34783deg);
-          transform : rotate(203.47826deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(203.47826deg) skewY(-74.34783deg);
+    transform         : rotate(203.47826deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(13) .slice-contents {
-  background : blue;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : yellow;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-13 {
+    100% {
+        -webkit-transform : rotate(2010deg);
+        transform         : rotate(2010deg);
+    }
+}
+
+@keyframes wheel-rotation-13 {
+    100% {
+        -webkit-transform : rotate(2010deg);
+        transform         : rotate(2010deg);
+    }
 }
 #wheel > ul > li:nth-of-type(14) {
-  -webkit-transform : rotate(219.13043deg) skewY(-74.34783deg);
-          transform : rotate(219.13043deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(219.13043deg) skewY(-74.34783deg);
+    transform         : rotate(219.13043deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(14) .slice-contents {
-  background : orange;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : green;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-14 {
+    100% {
+        -webkit-transform : rotate(2025deg);
+        transform         : rotate(2025deg);
+    }
+}
+
+@keyframes wheel-rotation-14 {
+    100% {
+        -webkit-transform : rotate(2025deg);
+        transform         : rotate(2025deg);
+    }
 }
 #wheel > ul > li:nth-of-type(15) {
-  -webkit-transform : rotate(234.78261deg) skewY(-74.34783deg);
-          transform : rotate(234.78261deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(234.78261deg) skewY(-74.34783deg);
+    transform         : rotate(234.78261deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(15) .slice-contents {
-  background : red;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : blue;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-15 {
+    100% {
+        -webkit-transform : rotate(2040deg);
+        transform         : rotate(2040deg);
+    }
+}
+
+@keyframes wheel-rotation-15 {
+    100% {
+        -webkit-transform : rotate(2040deg);
+        transform         : rotate(2040deg);
+    }
 }
 #wheel > ul > li:nth-of-type(16) {
-  -webkit-transform : rotate(250.43478deg) skewY(-74.34783deg);
-          transform : rotate(250.43478deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(250.43478deg) skewY(-74.34783deg);
+    transform         : rotate(250.43478deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(16) .slice-contents {
-  background : yellow;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : orange;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-16 {
+    100% {
+        -webkit-transform : rotate(2055deg);
+        transform         : rotate(2055deg);
+    }
+}
+
+@keyframes wheel-rotation-16 {
+    100% {
+        -webkit-transform : rotate(2055deg);
+        transform         : rotate(2055deg);
+    }
 }
 #wheel > ul > li:nth-of-type(17) {
-  -webkit-transform : rotate(266.08696deg) skewY(-74.34783deg);
-          transform : rotate(266.08696deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(266.08696deg) skewY(-74.34783deg);
+    transform         : rotate(266.08696deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(17) .slice-contents {
-  background : green;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : pink;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-17 {
+    100% {
+        -webkit-transform : rotate(2070deg);
+        transform         : rotate(2070deg);
+    }
+}
+
+@keyframes wheel-rotation-17 {
+    100% {
+        -webkit-transform : rotate(2070deg);
+        transform         : rotate(2070deg);
+    }
 }
 #wheel > ul > li:nth-of-type(18) {
-  -webkit-transform : rotate(281.73913deg) skewY(-74.34783deg);
-          transform : rotate(281.73913deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(281.73913deg) skewY(-74.34783deg);
+    transform         : rotate(281.73913deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(18) .slice-contents {
-  background : blue;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : red;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-18 {
+    100% {
+        -webkit-transform : rotate(2085deg);
+        transform         : rotate(2085deg);
+    }
+}
+
+@keyframes wheel-rotation-18 {
+    100% {
+        -webkit-transform : rotate(2085deg);
+        transform         : rotate(2085deg);
+    }
 }
 #wheel > ul > li:nth-of-type(19) {
-  -webkit-transform : rotate(297.3913deg) skewY(-74.34783deg);
-          transform : rotate(297.3913deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(297.3913deg) skewY(-74.34783deg);
+    transform         : rotate(297.3913deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(19) .slice-contents {
-  background : orange;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : yellow;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-19 {
+    100% {
+        -webkit-transform : rotate(2100deg);
+        transform         : rotate(2100deg);
+    }
+}
+
+@keyframes wheel-rotation-19 {
+    100% {
+        -webkit-transform : rotate(2100deg);
+        transform         : rotate(2100deg);
+    }
 }
 #wheel > ul > li:nth-of-type(20) {
-  -webkit-transform : rotate(313.04348deg) skewY(-74.34783deg);
-          transform : rotate(313.04348deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(313.04348deg) skewY(-74.34783deg);
+    transform         : rotate(313.04348deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(20) .slice-contents {
-  background : red;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : green;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-20 {
+    100% {
+        -webkit-transform : rotate(2115deg);
+        transform         : rotate(2115deg);
+    }
+}
+
+@keyframes wheel-rotation-20 {
+    100% {
+        -webkit-transform : rotate(2115deg);
+        transform         : rotate(2115deg);
+    }
 }
 #wheel > ul > li:nth-of-type(21) {
-  -webkit-transform : rotate(328.69565deg) skewY(-74.34783deg);
-          transform : rotate(328.69565deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(328.69565deg) skewY(-74.34783deg);
+    transform         : rotate(328.69565deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(21) .slice-contents {
-  background : yellow;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : blue;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-21 {
+    100% {
+        -webkit-transform : rotate(2130deg);
+        transform         : rotate(2130deg);
+    }
+}
+
+@keyframes wheel-rotation-21 {
+    100% {
+        -webkit-transform : rotate(2130deg);
+        transform         : rotate(2130deg);
+    }
 }
 #wheel > ul > li:nth-of-type(22) {
-  -webkit-transform : rotate(344.34783deg) skewY(-74.34783deg);
-          transform : rotate(344.34783deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(344.34783deg) skewY(-74.34783deg);
+    transform         : rotate(344.34783deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(22) .slice-contents {
-  background : green;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : orange;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-22 {
+    100% {
+        -webkit-transform : rotate(2145deg);
+        transform         : rotate(2145deg);
+    }
+}
+
+@keyframes wheel-rotation-22 {
+    100% {
+        -webkit-transform : rotate(2145deg);
+        transform         : rotate(2145deg);
+    }
 }
 #wheel > ul > li:nth-of-type(23) {
-  -webkit-transform : rotate(360deg) skewY(-74.34783deg);
-          transform : rotate(360deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(360deg) skewY(-74.34783deg);
+    transform         : rotate(360deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(23) .slice-contents {
-  background : blue;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : pink;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
+}
+
+@-webkit-keyframes wheel-rotation-23 {
+    100% {
+        -webkit-transform : rotate(2160deg);
+        transform         : rotate(2160deg);
+    }
+}
+
+@keyframes wheel-rotation-23 {
+    100% {
+        -webkit-transform : rotate(2160deg);
+        transform         : rotate(2160deg);
+    }
 }
 #wheel > ul > li:nth-of-type(24) {
-  -webkit-transform : rotate(375.65217deg) skewY(-74.34783deg);
-          transform : rotate(375.65217deg) skewY(-74.34783deg);
-  /* minus (90deg minus the central angle of the slice)
+    -webkit-transform : rotate(375.65217deg) skewY(-74.34783deg);
+    transform         : rotate(375.65217deg) skewY(-74.34783deg);
+    /* minus (90deg minus the central angle of the slice)
 see http://en.wikipedia.org/wiki/Central_angle
 change it to see how the slice changes */
   /* in this case, take the central angle of the slice to be 50deg
      90deg - 50deg = 40deg => skewY(-40deg) */
 }
-
 #wheel > ul > li:nth-of-type(24) .slice-contents {
-  background : orange;
-  -webkit-transform  : skewY(74.34783deg) rotate(7.82609deg);
-          transform  : skewY(74.34783deg) rotate(7.82609deg);
-  /* rotate by half the central angle of the slice
+    background        : red;
+    -webkit-transform : skewY(74.34783deg) rotate(7.82609deg);
+    transform         : skewY(74.34783deg) rotate(7.82609deg);
+    /* rotate by half the central angle of the slice
 which is 50deg in this case */
 }
 
+@-webkit-keyframes wheel-rotation-24 {
+    100% {
+        -webkit-transform : rotate(2175deg);
+        transform         : rotate(2175deg);
+    }
+}
+
+@keyframes wheel-rotation-24 {
+    100% {
+        -webkit-transform : rotate(2175deg);
+        transform         : rotate(2175deg);
+    }
+}
 .pie {
-  position      : relative;
-  /*margin: 1em auto;*/
-  border        : dashed 1px;
-  padding       : 0;
-  width         : 32em;
-  height        : 32em;
-  border-radius : 50%;
-  list-style    : none;
-  -webkit-transform     : rotate(0deg);
-          transform     : rotate(0deg);
+    position          : relative;
+    padding           : 0;
+    width             : 32em;
+    height            : 32em;
+    border-radius     : 50%;
+    list-style        : none;
+    -webkit-transform : rotate(0deg);
+    transform         : rotate(0deg);
 }
 
 input[type=text]#user_guess {
-  width    : 100vw;
-  height   : 100vh;
-  display  : block;
-  position : fixed;
-  top      : 0;
-  opacity  : 0;
+    width    : 100vw;
+    height   : 100vh;
+    display  : block;
+    position : fixed;
+    top      : 0;
+    opacity  : 0;
 }
 
 html {
-  -webkit-transition : all 250ms ease;
-  transition : all 250ms ease;
+    -webkit-transition : all 250ms ease;
+    transition         : all 250ms ease;
 }
 
 /*# sourceMappingURL=main.css.map */
