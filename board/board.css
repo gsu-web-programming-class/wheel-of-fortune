@@ -1,0 +1,23 @@
+body{
+
+}
+table,th,td{
+  border: 3px solid black;
+  width: 1070px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row1{
+ background-image: url("LetterPlaceholder.jpg");
+}
+.row2{
+ background-image: url("LetterPlaceholder.jpg");
+}
+.row3{
+ background-image: url("LetterPlaceholder.jpg");
+}
+.row4{
+ background-image: url("LetterPlaceholder.jpg");
+}
+

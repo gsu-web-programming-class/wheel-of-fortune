@@ -7,12 +7,6 @@
 </head>
 <body>
 <div>
-
-
-
-
-</div>
-<div>
 <?php
 $phrase1='A DIME A DOZEN';
 $phrase2='BAG OF TRICKS';
@@ -150,10 +144,6 @@ function split_if_need($words,$phrases,$twoline){
         preg_match('/^([^ ]+ +[^ ]+) +(.*)$/', $phrases, $matches);
         $twoline++;
     }
-}
-
-function to_binary(){
-
 }
 
 ?>
