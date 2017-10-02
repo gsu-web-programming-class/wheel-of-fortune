@@ -9,8 +9,13 @@
     </head>
     <body>
         <?php echo play_sound( WHEEL_SPIN, false, "../media/audio" ); ?>
+        <ul class='pie'>
+            <li class='slice'>
+                <div class='slice-contents'>boo</div>
+            </li>
+        </ul>
         <div id="wheel">
-            <ul>
+            <ul class='pie'>
                 <?php
                     $money_amounts = [
                         0  => [ "value" => 300, "display" => "$300" ],
@@ -40,9 +45,9 @@
                     ];
                     shuffle( $money_amounts );
                     for ( $i = 0; $i < 24; $i++ ) {
-                        echo "<li><p>";
+                        echo "<li class=\"slice\"><div class=\"slice-contents\"><span>";
                         echo $money_amounts[ $i ][ "display" ];
-                        echo "</p></li>";
+                        echo "</span></div></li>";
                     }
                 ?>
             </ul>

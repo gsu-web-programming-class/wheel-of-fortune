@@ -1,28 +1,83 @@
 #wheel {
-    display         : flex;
-    height          : 100vh;
-    justify-content : center;
-    align-items     : center;
+  display         : flex;
+  height          : 100vh;
+  justify-content : center;
+  align-items     : center;
 
-    > ul {
-        > li {
-            display          : inline;
-            width            : 10px;
-            text-align       : center;
-            word-wrap        : break-word;
-            transform-origin : top center;
-            padding-top      : 150px;
-            position         : absolute;
+  > ul {
+    > li {
+      //display          : inline;
+      //width            : 10px;
+      //text-align       : center;
+      //word-wrap        : break-word;
+      //transform-origin : top center;
+      //padding-top      : 150px;
+      //position         : absolute;
+      //
+      //> p {
+      //  transform : rotate(180deg);
+      //}
 
-            > p {
-                transform : rotate(180deg);
-            }
+      overflow         : hidden;
+      position         : absolute;
+      top              : 0; right : 0;
+      width            : 50%; height : 50%;
+      transform-origin : 0% 100%;
 
-            @for $i from 1 through 24 {
-                &:nth-of-type(#{$i}) {
-                    transform : rotate(#{$i*(360/24)}deg);
-                }
-            }
+      .slice-contents {
+        position      : absolute;
+        left          : -100%;
+        width         : 200%; height : 200%;
+        border-radius : 50%;
+        text-align    : center;
+        transition    : background-color .5s;
+
+        > span {
+          color       : black;
+          @include drop-shadow(1px, 1px, 1px, white);
+          font-weight : bolder;
+          width       : 10px;
+          word-wrap   : break-word;
+          display     : inline-block;
+          padding     : 20px;
+          font-size   : 30px;
         }
+      }
+
+      $colors : ("red", "yellow", "green", "blue", "orange");
+
+      @for $i from 1 through 24 {
+        &:nth-of-type(#{$i}) {
+          $thickness : 360/23;
+          $rotation : #{$i*($thickness)};
+          $skewness : 90-$thickness;
+          transform : rotate(#{$rotation}deg) /* angle between vertical axis (12 o'clock)
+							and start of the slice;
+							change it to see how the slice changes */
+          skewY(#{-$skewness}deg); /* minus (90deg minus the central angle of the slice)
+							see http://en.wikipedia.org/wiki/Central_angle
+							change it to see how the slice changes */
+          /* in this case, take the central angle of the slice to be 50deg
+             90deg - 50deg = 40deg => skewY(-40deg) */
+          .slice-contents {
+            background : unquote(nth($colors, ($i) % length($colors)+1));
+            transform  : skewY(#{$skewness}deg) /* unskew slice contents */
+            rotate(#{$thickness/2}deg); /* rotate by half the central angle of the slice
+							which is 50deg in this case */
+          }
+        }
+      }
     }
+  }
+}
+
+.pie {
+  position      : relative;
+  /*margin: 1em auto;*/
+  border        : dashed 1px;
+  padding       : 0;
+  width         : 32em; height : 32em;
+  border-radius : 50%;
+  list-style    : none;
+  transform     : rotate(0deg);
 }
