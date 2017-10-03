@@ -1,14 +1,17 @@
-body{
-
+body {
 }
-table,th,td{
-  border: 3px solid black;
-  width: 1070px;
-  height: 80px;
-  margin-left: auto;
-  margin-right: auto;
- background-image: url("LetterPlaceholder.jpg");
-}
-/*.row2.1 {*/
 
-/*}*/
+table, th, td {
+    border       : 3px solid black;
+    width        : 1070px;
+    height       : 80px;
+    margin-left  : auto;
+    margin-right : auto;
+}
+
+td {
+    background-image : url("LetterPlaceholder.jpg");
+}
+
+.row2.A1 {
+}
