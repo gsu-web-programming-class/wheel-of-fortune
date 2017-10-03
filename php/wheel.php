@@ -67,9 +67,9 @@
                 <img src="../media/img/wheel_of_fortune_wheel_center.png">
             </div>
             <?php
-                echo "<h1>$wheel_index</h1>";
-                echo "<h1>" . ( $money_amounts[ $wheel_index ][ "display" ] ) . "</h1>";
-                echo "<input hidden name=\"prev_wheel_index\" type=\"text\" value=\"$wheel_index\">";
+                // echo "<h1>$wheel_index</h1>";
+                // echo "<h1>" . ( $money_amounts[ $wheel_index ][ "display" ] ) . "</h1>";
+                // echo "<input hidden name=\"prev_wheel_index\" type=\"text\" value=\"$wheel_index\">";
             ?>
         </div>
     </body>

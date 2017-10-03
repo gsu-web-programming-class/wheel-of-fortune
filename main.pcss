@@ -1,90 +1,32 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-
-html {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-q, blockquote {
-  quotes: none;
-}
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-a img {
-  border: none;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block;
-}
-
 #wheel-wrapper {
-  height           : 100vh;
-    display        : flex;
-  justify-content  : center;
-    flex-direction : column;
-  align-items      : center;
-  user-select      : none;
+    position        : absolute;
+    height          : 100vh;
+    display         : flex;
+    justify-content : center;
+    flex-direction  : column;
+    align-items     : center;
+    user-select     : none;
 }
 
-#wheel-wrapper > h1 {
-    font-size   : 3em;
-    font-weight : bolder;
+#wheel-wrapper > p {
+    font-size     : 3em;
+    font-weight   : bolder;
+    margin-bottom : -30px;
 }
-
 #wheel-wrapper #wheel {
-    display          : flex;
-    justify-content  : center;
-    align-items      : center;
-    transition       : transform 2s ease;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
+    display             : flex;
+    justify-content     : center;
+    align-items         : center;
+    transition          : transform 2s ease;
+    animation-duration  : 4500ms;
+    animation-fill-mode : forwards;
 }
-
 #wheel-wrapper #wheel #down-arrow {
     position : static;
 }
-
 #wheel-wrapper #wheel img {
   position: absolute;
 }
-
 #wheel-wrapper #wheel > ul {
     position      : relative;
     padding       : 0;
@@ -94,7 +36,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     list-style    : none;
     transform     : rotate(0deg);
 }
-
 #wheel-wrapper #wheel > ul > li {
   overflow: hidden;
   position: absolute;
@@ -104,7 +45,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 50%;
   transform-origin: 0 100%;
 }
-
 #wheel-wrapper #wheel > ul > li .slice-contents {
   position: absolute;
   left: -100%;
@@ -114,631 +54,579 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-align: center;
   transition: background-color .5s;
 }
-
 #wheel-wrapper #wheel > ul > li .slice-contents > span {
-  color: black;
-  font-weight: bolder;
-  width: 10px;
-  word-wrap: break-word;
-  display: inline-block;
-  padding: 20px;
-  font-size: 25px;
-  filter: drop-shadow(1px 1px 1px white);
+    color       : black;
+    font-weight : bolder;
+    width       : 10px;
+    word-wrap   : break-word;
+    display     : inline-block;
+    padding     : 20px;
+    font-size   : 25px;
+    line-height : 25px;
+    filter      : drop-shadow(1px 1px 1px white);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(1) {
     transform : rotate(0deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(1) .slice-contents {
-  background  : yellow;
-    transform : skewY(75deg) rotate(7.5deg);
+    background : yellow;
+    transform  : skewY(75deg) rotate(7.5deg);
 }
-
 @-moz-keyframes wheel-rotation-0 {
     100% {
-        transform : rotate(-1806.6deg);
+        transform : rotate(-1807.5deg);
     }
 }
-
 @-webkit-keyframes wheel-rotation-0 {
     100% {
-        transform : rotate(-1811.85deg);
+        transform : rotate(-1807.5deg);
     }
 }
-
 @keyframes wheel-rotation-0 {
     100% {
-        transform : rotate(-1814.1deg);
+        transform : rotate(-1807.5deg);
     }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(2) {
     transform : rotate(15deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(2) .slice-contents {
     background : green;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-1 {
   100% {
-      transform : rotate(-1820.85deg);
+      transform : rotate(-1822.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-1 {
   100% {
-      transform : rotate(-1822.2deg);
+      transform : rotate(-1822.5deg);
   }
 }
 @keyframes wheel-rotation-1 {
   100% {
-      transform : rotate(-1826.7deg);
+      transform : rotate(-1822.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(3) {
     transform : rotate(30deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(3) .slice-contents {
     background : blue;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-2 {
   100% {
-      transform : rotate(-1835.85deg);
+      transform : rotate(-1837.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-2 {
   100% {
-      transform : rotate(-1834.2deg);
+      transform : rotate(-1837.5deg);
   }
 }
 @keyframes wheel-rotation-2 {
   100% {
-      transform : rotate(-1839.3deg);
+      transform : rotate(-1837.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(4) {
     transform : rotate(45deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(4) .slice-contents {
     background : orange;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-3 {
   100% {
-      transform : rotate(-1859.25deg);
+      transform : rotate(-1852.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-3 {
   100% {
-      transform : rotate(-1858.05deg);
+      transform : rotate(-1852.5deg);
   }
 }
 @keyframes wheel-rotation-3 {
   100% {
-      transform : rotate(-1850.55deg);
+      transform : rotate(-1852.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(5) {
     transform : rotate(60deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(5) .slice-contents {
     background : pink;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-4 {
   100% {
-      transform : rotate(-1873.35deg);
+      transform : rotate(-1867.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-4 {
   100% {
-      transform : rotate(-1864.8deg);
+      transform : rotate(-1867.5deg);
   }
 }
 @keyframes wheel-rotation-4 {
   100% {
-      transform : rotate(-1870.65deg);
+      transform : rotate(-1867.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(6) {
     transform : rotate(75deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(6) .slice-contents {
     background : red;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-5 {
   100% {
-      transform : rotate(-1886.25deg);
+      transform : rotate(-1882.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-5 {
   100% {
-      transform : rotate(-1876.8deg);
+      transform : rotate(-1882.5deg);
   }
 }
 @keyframes wheel-rotation-5 {
   100% {
-      transform : rotate(-1877.25deg);
+      transform : rotate(-1882.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(7) {
     transform : rotate(90deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(7) .slice-contents {
     background : yellow;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-6 {
   100% {
-      transform : rotate(-1892.25deg);
+      transform : rotate(-1897.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-6 {
   100% {
-      transform : rotate(-1900.35deg);
+      transform : rotate(-1897.5deg);
   }
 }
 @keyframes wheel-rotation-6 {
   100% {
-      transform : rotate(-1900.35deg);
+      transform : rotate(-1897.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(8) {
     transform : rotate(105deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(8) .slice-contents {
     background : green;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-7 {
   100% {
-      transform : rotate(-1913.85deg);
+      transform : rotate(-1912.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-7 {
   100% {
-      transform : rotate(-1906.95deg);
+      transform : rotate(-1912.5deg);
   }
 }
 @keyframes wheel-rotation-7 {
   100% {
-      transform : rotate(-1913.7deg);
+      transform : rotate(-1912.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(9) {
     transform : rotate(120deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(9) .slice-contents {
     background : blue;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-8 {
   100% {
-      transform : rotate(-1928.1deg);
+      transform : rotate(-1927.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-8 {
   100% {
-      transform : rotate(-1925.4deg);
+      transform : rotate(-1927.5deg);
   }
 }
 @keyframes wheel-rotation-8 {
   100% {
-      transform : rotate(-1929.9deg);
+      transform : rotate(-1927.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(10) {
     transform : rotate(135deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(10) .slice-contents {
     background : orange;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-9 {
   100% {
-      transform : rotate(-1945.2deg);
+      transform : rotate(-1942.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-9 {
   100% {
-      transform : rotate(-1948.8deg);
+      transform : rotate(-1942.5deg);
   }
 }
 @keyframes wheel-rotation-9 {
   100% {
-      transform : rotate(-1948.05deg);
+      transform : rotate(-1942.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(11) {
     transform : rotate(150deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(11) .slice-contents {
     background : pink;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-10 {
   100% {
-      transform : rotate(-1952.85deg);
+      transform : rotate(-1957.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-10 {
   100% {
-      transform : rotate(-1959.3deg);
+      transform : rotate(-1957.5deg);
   }
 }
 @keyframes wheel-rotation-10 {
   100% {
-      transform : rotate(-1963.8deg);
+      transform : rotate(-1957.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(12) {
     transform : rotate(165deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(12) .slice-contents {
     background : red;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-11 {
   100% {
-      transform : rotate(-1976.85deg);
+      transform : rotate(-1972.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-11 {
   100% {
-      transform : rotate(-1977.3deg);
+      transform : rotate(-1972.5deg);
   }
 }
 @keyframes wheel-rotation-11 {
   100% {
-      transform : rotate(-1969.2deg);
+      transform : rotate(-1972.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(13) {
     transform : rotate(180deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(13) .slice-contents {
     background : yellow;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-12 {
   100% {
-      transform : rotate(-1981.65deg);
+      transform : rotate(-1987.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-12 {
   100% {
-      transform : rotate(-1983.6deg);
+      transform : rotate(-1987.5deg);
   }
 }
 @keyframes wheel-rotation-12 {
   100% {
-      transform : rotate(-1988.25deg);
+      transform : rotate(-1987.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(14) {
     transform : rotate(195deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(14) .slice-contents {
     background : green;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-13 {
   100% {
-      transform : rotate(-1999.05deg);
+      transform : rotate(-2002.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-13 {
   100% {
-      transform : rotate(-1996.65deg);
+      transform : rotate(-2002.5deg);
   }
 }
 @keyframes wheel-rotation-13 {
   100% {
-      transform : rotate(-2005.35deg);
+      transform : rotate(-2002.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(15) {
     transform : rotate(210deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(15) .slice-contents {
     background : blue;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-14 {
   100% {
-      transform : rotate(-2015.4deg);
+      transform : rotate(-2017.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-14 {
   100% {
-      transform : rotate(-2011.05deg);
+      transform : rotate(-2017.5deg);
   }
 }
 @keyframes wheel-rotation-14 {
   100% {
-      transform : rotate(-2019.15deg);
+      transform : rotate(-2017.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(16) {
     transform : rotate(225deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(16) .slice-contents {
     background : orange;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-15 {
   100% {
-      transform : rotate(-2036.4deg);
+      transform : rotate(-2032.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-15 {
   100% {
-      transform : rotate(-2026.5deg);
+      transform : rotate(-2032.5deg);
   }
 }
 @keyframes wheel-rotation-15 {
   100% {
-      transform : rotate(-2038.05deg);
+      transform : rotate(-2032.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(17) {
     transform : rotate(240deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(17) .slice-contents {
     background : pink;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-16 {
   100% {
-      transform : rotate(-2046.6deg);
+      transform : rotate(-2047.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-16 {
   100% {
-      transform : rotate(-2053.65deg);
+      transform : rotate(-2047.5deg);
   }
 }
 @keyframes wheel-rotation-16 {
   100% {
-      transform : rotate(-2041.35deg);
+      transform : rotate(-2047.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(18) {
     transform : rotate(255deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(18) .slice-contents {
     background : red;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-17 {
   100% {
-      transform : rotate(-2063.4deg);
+      transform : rotate(-2062.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-17 {
   100% {
-      transform : rotate(-2062.05deg);
+      transform : rotate(-2062.5deg);
   }
 }
 @keyframes wheel-rotation-17 {
   100% {
-      transform : rotate(-2055.9deg);
+      transform : rotate(-2062.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(19) {
     transform : rotate(270deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(19) .slice-contents {
     background : yellow;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-18 {
   100% {
-      transform : rotate(-2083.5deg);
+      transform : rotate(-2077.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-18 {
   100% {
-      transform : rotate(-2082.9deg);
+      transform : rotate(-2077.5deg);
   }
 }
 @keyframes wheel-rotation-18 {
   100% {
-      transform : rotate(-2072.55deg);
+      transform : rotate(-2077.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(20) {
     transform : rotate(285deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(20) .slice-contents {
     background : green;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-19 {
   100% {
-      transform : rotate(-2091.45deg);
+      transform : rotate(-2092.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-19 {
   100% {
-      transform : rotate(-2090.4deg);
+      transform : rotate(-2092.5deg);
   }
 }
 @keyframes wheel-rotation-19 {
   100% {
-      transform : rotate(-2087.25deg);
+      transform : rotate(-2092.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(21) {
     transform : rotate(300deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(21) .slice-contents {
     background : blue;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-20 {
   100% {
-      transform : rotate(-2111.7deg);
+      transform : rotate(-2107.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-20 {
   100% {
-      transform : rotate(-2109.45deg);
+      transform : rotate(-2107.5deg);
   }
 }
 @keyframes wheel-rotation-20 {
   100% {
-      transform : rotate(-2105.1deg);
+      transform : rotate(-2107.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(22) {
     transform : rotate(315deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(22) .slice-contents {
     background : orange;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-21 {
   100% {
-      transform : rotate(-2119.8deg);
+      transform : rotate(-2122.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-21 {
   100% {
-      transform : rotate(-2119.65deg);
+      transform : rotate(-2122.5deg);
   }
 }
 @keyframes wheel-rotation-21 {
   100% {
-      transform : rotate(-2118.6deg);
+      transform : rotate(-2122.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(23) {
     transform : rotate(330deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(23) .slice-contents {
     background : pink;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-22 {
   100% {
-      transform : rotate(-2142.6deg);
+      transform : rotate(-2137.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-22 {
   100% {
-      transform : rotate(-2139.75deg);
+      transform : rotate(-2137.5deg);
   }
 }
 @keyframes wheel-rotation-22 {
   100% {
-      transform : rotate(-2140.5deg);
+      transform : rotate(-2137.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(24) {
     transform : rotate(345deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(24) .slice-contents {
     background : red;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-23 {
   100% {
-      transform : rotate(-2150.4deg);
+      transform : rotate(-2152.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-23 {
   100% {
-      transform : rotate(-2147.1deg);
+      transform : rotate(-2152.5deg);
   }
 }
 @keyframes wheel-rotation-23 {
   100% {
-      transform : rotate(-2151.15deg);
+      transform : rotate(-2152.5deg);
   }
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(25) {
     transform : rotate(360deg) skewY(-75deg);
 }
-
 #wheel-wrapper #wheel > ul > li:nth-of-type(25) .slice-contents {
     background : yellow;
     transform  : skewY(75deg) rotate(7.5deg);
 }
 @-moz-keyframes wheel-rotation-24 {
   100% {
-      transform : rotate(-2163.6deg);
+      transform : rotate(-2167.5deg);
   }
 }
 @-webkit-keyframes wheel-rotation-24 {
   100% {
-      transform : rotate(-2165.55deg);
+      transform : rotate(-2167.5deg);
   }
 }
 @keyframes wheel-rotation-24 {
   100% {
-      transform : rotate(-2164.2deg);
+      transform : rotate(-2167.5deg);
   }
 }
 input[type=text]#user_guess {
-  width: 100vw;
-  height: 100vh;
   display: block;
-  position: fixed;
-  top: 0;
-  opacity: 0;
 }
 
 html {
-  transition: all 250ms ease;
+    height   : 100vh;
+    overflow : hidden;
+}
+
+html #main_game_form {
+    display         : flex;
+    justify-content : space-around;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,6 +1,7 @@
 $wheel-rotation-anim-name : "wheel-rotation";
 
 #wheel-wrapper {
+  position        : absolute;
   height          : 100vh;
   display         : flex;
   justify-content : center;
@@ -8,9 +9,10 @@ $wheel-rotation-anim-name : "wheel-rotation";
   align-items     : center;
   user-select     : none;
 
-  > h1 {
-    font-size   : 3em;
-    font-weight : bolder;
+  > p {
+    font-size     : 3em;
+    font-weight   : bolder;
+    margin-bottom : -30px;
   }
 
   #wheel {
@@ -24,7 +26,8 @@ $wheel-rotation-anim-name : "wheel-rotation";
     }
 
     animation   : {
-      duration  : 5s;
+      duration  : 4500ms;
+      //delay     : 100ms;
       fill-mode : forwards;
     }
 
@@ -63,6 +66,7 @@ $wheel-rotation-anim-name : "wheel-rotation";
             display     : inline-block;
             padding     : 20px;
             font-size   : 25px;
+            line-height : 25px;
             @include drop-shadow(1px, 1px, 1px, white);
           }
         }
@@ -84,7 +88,7 @@ $wheel-rotation-anim-name : "wheel-rotation";
 
             @include keyframes($wheel-rotation-anim-name+"-"+($i)) {
               100% {
-                transform : rotate(-#{1800+($rotation)+($sectionCentralAngle*((random(90)+5)/100))}deg);
+                transform : rotate(-#{1800+($rotation)+($sectionCentralAngle*0.5)}deg);
               }
             }
           }
