@@ -1,87 +1,95 @@
 $wheel-rotation-anim-name : "wheel-rotation";
 
-#wheel {
-  display         : flex;
+#wheel-wrapper {
   height          : 100vh;
+  display         : flex;
   justify-content : center;
+  flex-direction  : column;
   align-items     : center;
   user-select     : none;
 
-  animation   : {
-    duration  : 5s;
-    fill-mode : forwards;
+  > h1 {
+    font-size   : 3em;
+    font-weight : bolder;
   }
 
-  img {
-    position : absolute;
-  }
+  #wheel {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    transition      : transform 2s ease;
 
-  > ul {
-    > li {
-      overflow         : hidden;
-      position         : absolute;
-      top              : 0; right : 0;
-      width            : 50%; height : 50%;
-      transform-origin : 0 100%;
+    #down-arrow {
+      position : static;
+    }
 
-      .slice-contents {
-        position      : absolute;
-        left          : -100%;
-        width         : 200%; height : 200%;
-        border-radius : 50%;
-        text-align    : center;
-        transition    : background-color .5s;
+    animation   : {
+      duration  : 5s;
+      fill-mode : forwards;
+    }
 
-        > span {
-          color       : black;
-          font-weight : bolder;
-          width       : 10px;
-          word-wrap   : break-word;
-          display     : inline-block;
-          padding     : 20px;
-          font-size   : 25px;
-          @include drop-shadow(1px, 1px, 1px, white);
-        }
-      }
+    img {
+      position : absolute;
+    }
 
-      $colors : ("red", "yellow", "green", "blue", "orange", "pink");
-      $numberOfSectionsInWheel : 24;
-      @for $i from 1 through $numberOfSectionsInWheel {
-        &:nth-of-type(#{$i}) {
-          $thickness : 360/23;
-          $rotation : #{$i*($thickness)};
-          $skewness : 90-$thickness;
-          transform : rotate(#{$rotation}deg) /* angle between vertical axis (12 o'clock)
-							and start of the slice;
-							change it to see how the slice changes */
-          skewY(#{-$skewness}deg); /* minus (90deg minus the central angle of the slice)
-							see http://en.wikipedia.org/wiki/Central_angle
-							change it to see how the slice changes */
-          /* in this case, take the central angle of the slice to be 50deg
-             90deg - 50deg = 40deg => skewY(-40deg) */
-          .slice-contents {
-            background : unquote(nth($colors, ($i) % length($colors)+1));
-            transform  : skewY(#{$skewness}deg) /* unskew slice contents */
-            rotate(#{$thickness/2}deg); /* rotate by half the central angle of the slice
-							which is 50deg in this case */
+    > ul {
+      position      : relative;
+      padding       : 0;
+      width         : 32em; height : 32em;
+      border-radius : 50%;
+      list-style    : none;
+      transform     : rotate(0deg);
+
+      > li {
+        overflow         : hidden;
+        position         : absolute;
+        top              : 0; right : 0;
+        width            : 50%; height : 50%;
+        transform-origin : 0 100%;
+
+        .slice-contents {
+          position      : absolute;
+          left          : -100%;
+          width         : 200%; height : 200%;
+          border-radius : 50%;
+          text-align    : center;
+          transition    : background-color .5s;
+
+          > span {
+            color       : black;
+            font-weight : bolder;
+            width       : 10px;
+            word-wrap   : break-word;
+            display     : inline-block;
+            padding     : 20px;
+            font-size   : 25px;
+            @include drop-shadow(1px, 1px, 1px, white);
           }
+        }
 
-          @include keyframes($wheel-rotation-anim-name+"-"+$i) {
-            100% {
-              transform : rotate(#{1800+(360*$i/$numberOfSectionsInWheel)+(360/$numberOfSectionsInWheel)}deg);
+        $colors : ("red", "yellow", "green", "blue", "orange", "pink");
+        $numberOfSectionsInWheel : 24;
+        @for $i from 0 through $numberOfSectionsInWheel {
+          //$iz: #{$i - 1};
+          &:nth-of-type(#{$i+1}) {
+            $sectionCentralAngle : 360/$numberOfSectionsInWheel;
+            $rotation : $i*$sectionCentralAngle;
+            $skewness : 90-$sectionCentralAngle;
+            transform : rotate(#{$rotation}deg) skewY(#{-$skewness}deg);
+
+            .slice-contents {
+              background : unquote(nth($colors, ($i+1) % length($colors)+1));
+              transform  : skewY(#{$skewness}deg) rotate(#{$sectionCentralAngle/2}deg);
+            }
+
+            @include keyframes($wheel-rotation-anim-name+"-"+($i)) {
+              100% {
+                transform : rotate(-#{1800+($rotation)+($sectionCentralAngle*((random(90)+5)/100))}deg);
+              }
             }
           }
         }
       }
     }
   }
-}
-
-.pie {
-  position      : relative;
-  padding       : 0;
-  width         : 32em; height : 32em;
-  border-radius : 50%;
-  list-style    : none;
-  transform     : rotate(0deg);
 }
