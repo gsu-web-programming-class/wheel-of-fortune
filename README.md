@@ -5,6 +5,9 @@
 - Php with PhpStorm
 - SCSS
 - Compass Sass
+- PostCSS
+  - fileutils
+  - autoprefixer
 - CSS3
 - Xdebug
 
