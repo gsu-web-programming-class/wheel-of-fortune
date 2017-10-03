@@ -1,7 +1,4 @@
 <?php include 'php/php_utils.php';
-    if ( isset( $prev_wheel_index ) ) {
-        print_r( $prev_wheel_index );
-    }
 
     $phrases = [
         [ 'A DIME', 'A DOZEN' ],
@@ -50,6 +47,7 @@
         $is_initial_load   = false;
         $game_phrase_array = $phrases[ rand( 0, count( $phrases ) ) ];
         $game_phrase       = join( " ", $game_phrase_array );
+        $sound             = play_sound( WHEEL_SPIN );
     } else {
         $sound         = play_sound( INTRO_THEME, true );
         $money_amounts = [
@@ -162,14 +160,14 @@
                                 <?php
                                     if(isset($money_amounts)){
                                         $numberOfSections = count( $money_amounts );
-                                        if(isset($user_guess_was_bad) && $user_guess_was_bad) {
+                                        if((isset($user_guess_was_bad) && $user_guess_was_bad) || (isset( $_GET[ "start" ] ))) {
                                             $wheel_index      = rand( 0, $numberOfSections-1 );
                                             $prev_wheel_index = $wheel_index;
                                             $wheel_anim = "wheel-rotation-$wheel_index";
 
                                             echo "-webkit-animation-name : $wheel_anim;";
                                             echo "animation-name : $wheel_anim;";
-                                        }else $wheel_index = $prev_wheel_index;
+                                        } else $wheel_index = $prev_wheel_index;
                                         echo "transform : rotate(".($prev_wheel_index*(360/$numberOfSections)-(360/$numberOfSections*0.5))."deg);";
                                     }
                                 ?>
@@ -216,14 +214,22 @@
                 </div>
             </form>
         <?php else: ?>
-            <form action="index.php" method="get">
-                <?php if ( isset( $money_amounts ) ) {
-                    echo "<input hidden name=\"money_amounts\" type=\"text\" value=\"" . htmlentities( serialize( $money_amounts ) ) . "\">";
-                } ?>
-                <input type="text" required name="player_1_name" placeholder="Player 1 Name" />
-                <input type="text" required name="player_2_name" placeholder="Player 2 Name" />
-                <input type="submit" value="Start" name="start">
-            </form>
+            <div id="start-form-wrapper">
+                <form id="start-form" action="index.php" method="get">
+                    <?php if ( isset( $money_amounts ) ) {
+                        echo "<input hidden name=\"money_amounts\" type=\"text\" value=\"" . htmlentities( serialize( $money_amounts ) ) . "\">";
+                    } ?>
+                    <h1>Wheel of Fortune</h1>
+                    <br>
+                    <div id="names">
+                        <input type="text" required name="player_1_name" placeholder="Player 1 Name" />
+                        <input type="text" required name="player_2_name" placeholder="Player 2 Name" />
+                    </div>
+                    <br>
+                    <br>
+                    <input type="submit" value="Start" name="start">
+                </form>
+            </div>
         <?php endif; ?>
     </body>
 </html>

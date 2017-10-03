@@ -4,10 +4,10 @@
     display         : flex;
     justify-content : center;
     flex-direction  : column;
+    z-index         : -1;
     align-items     : center;
     user-select     : none;
 }
-
 #wheel-wrapper > p {
     font-size     : 3em;
     font-weight   : bolder;
@@ -17,7 +17,6 @@
     display             : flex;
     justify-content     : center;
     align-items         : center;
-    transition          : transform 2s ease;
     animation-duration  : 4500ms;
     animation-fill-mode : forwards;
 }
@@ -623,10 +622,29 @@ html {
     height   : 100vh;
     overflow : hidden;
 }
-
 html #main_game_form {
     display         : flex;
     justify-content : space-around;
+}
+
+html #start-form-wrapper {
+    display         : flex;
+    justify-content : space-around;
+    align-content   : center;
+}
+
+html #start-form-wrapper #start-form {
+    justify-self : center;
+    text-align   : center;
+}
+
+html #start-form-wrapper #start-form input {
+    padding : 10px;
+    margin  : 10px;
+}
+
+html #start-form-wrapper #start-form #names {
+    display : flex;
 }
 
 /*# sourceMappingURL=main.css.map */

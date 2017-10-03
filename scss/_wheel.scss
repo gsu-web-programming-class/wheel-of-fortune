@@ -6,6 +6,7 @@ $wheel-rotation-anim-name : "wheel-rotation";
   display         : flex;
   justify-content : center;
   flex-direction  : column;
+  z-index         : -1;
   align-items     : center;
   user-select     : none;
 
@@ -19,7 +20,7 @@ $wheel-rotation-anim-name : "wheel-rotation";
     display         : flex;
     justify-content : center;
     align-items     : center;
-    transition      : transform 2s ease;
+    //transition      : transform 2s ease;
 
     #down-arrow {
       position : static;

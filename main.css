@@ -11,6 +11,7 @@
     -webkit-box-direction : normal;
     -ms-flex-direction    : column;
     flex-direction        : column;
+    z-index               : -1;
     -webkit-box-align     : center;
     -ms-flex-align        : center;
     align-items           : center;
@@ -19,7 +20,6 @@
     -ms-user-select       : none;
     user-select           : none;
 }
-
 #wheel-wrapper > p {
     font-size     : 3em;
     font-weight   : bolder;
@@ -35,10 +35,6 @@
     -webkit-box-align           : center;
     -ms-flex-align              : center;
     align-items                 : center;
-    -webkit-transition          : -webkit-transform 2s ease;
-    transition                  : -webkit-transform 2s ease;
-    transition                  : transform 2s ease;
-    transition                  : transform 2s ease, -webkit-transform 2s ease;
     -webkit-animation-duration  : 4500ms;
     animation-duration          : 4500ms;
     -webkit-animation-fill-mode : forwards;
@@ -625,13 +621,38 @@ html {
     height   : 100vh;
     overflow : hidden;
 }
-
 html #main_game_form {
     display         : -webkit-box;
     display         : -ms-flexbox;
     display         : flex;
     -ms-flex-pack   : distribute;
     justify-content : space-around;
+}
+
+html #start-form-wrapper {
+    display            : -webkit-box;
+    display            : -ms-flexbox;
+    display            : flex;
+    -ms-flex-pack      : distribute;
+    justify-content    : space-around;
+    -ms-flex-line-pack : center;
+    align-content      : center;
+}
+
+html #start-form-wrapper #start-form {
+    justify-self : center;
+    text-align   : center;
+}
+
+html #start-form-wrapper #start-form input {
+    padding : 10px;
+    margin  : 10px;
+}
+
+html #start-form-wrapper #start-form #names {
+    display : -webkit-box;
+    display : -ms-flexbox;
+    display : flex;
 }
 
 /*# sourceMappingURL=main.css.map */
